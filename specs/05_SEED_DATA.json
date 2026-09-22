@@ -1,0 +1,680 @@
+{
+  "demoUser": {
+    "id": "user_alex",
+    "name": "Alex Morgan",
+    "firstName": "Alex",
+    "role": "Product lead",
+    "timezone": "America/New_York"
+  },
+  "connectedAccounts": [
+    {
+      "id": "acct_gmail_work",
+      "provider": "gmail",
+      "label": "Work Gmail",
+      "address": "alex@northstar.co",
+      "context": "work",
+      "connected": true
+    },
+    {
+      "id": "acct_gmail_personal",
+      "provider": "gmail",
+      "label": "Personal Gmail",
+      "address": "alex.morgan@gmail.com",
+      "context": "personal",
+      "connected": true
+    },
+    {
+      "id": "acct_outlook",
+      "provider": "outlook",
+      "label": "Northstar Outlook",
+      "address": "alex.morgan@northstar.co",
+      "context": "work",
+      "connected": true
+    },
+    {
+      "id": "acct_slack_work",
+      "provider": "slack",
+      "label": "Northstar Slack",
+      "address": "Northstar workspace",
+      "context": "work",
+      "connected": true
+    },
+    {
+      "id": "acct_slack_personal",
+      "provider": "slack",
+      "label": "Friends Slack",
+      "address": "Weekend Crew workspace",
+      "context": "personal",
+      "connected": true
+    }
+  ],
+  "contacts": [
+    {
+      "id": "contact_maya",
+      "name": "Maya Chen",
+      "role": "Manager",
+      "priority": "vip",
+      "context": "work",
+      "avatarInitials": "MC"
+    },
+    {
+      "id": "contact_daniel",
+      "name": "Daniel Ruiz",
+      "role": "Client lead",
+      "priority": "high",
+      "context": "work",
+      "avatarInitials": "DR"
+    },
+    {
+      "id": "contact_jordan",
+      "name": "Jordan Lee",
+      "role": "Marketing",
+      "priority": "normal",
+      "context": "work",
+      "avatarInitials": "JL"
+    },
+    {
+      "id": "contact_sarah",
+      "name": "Sarah Patel",
+      "role": "Finance",
+      "priority": "high",
+      "context": "work",
+      "avatarInitials": "SP"
+    },
+    {
+      "id": "contact_noah",
+      "name": "Noah Brooks",
+      "role": "Designer",
+      "priority": "normal",
+      "context": "work",
+      "avatarInitials": "NB"
+    },
+    {
+      "id": "contact_professor",
+      "name": "Professor Rivera",
+      "role": "Research advisor",
+      "priority": "high",
+      "context": "work",
+      "avatarInitials": "PR"
+    },
+    {
+      "id": "contact_mom",
+      "name": "Mom",
+      "role": "Family",
+      "priority": "vip",
+      "context": "personal",
+      "avatarInitials": "M"
+    },
+    {
+      "id": "contact_emma",
+      "name": "Emma",
+      "role": "Friend",
+      "priority": "normal",
+      "context": "personal",
+      "avatarInitials": "E"
+    },
+    {
+      "id": "contact_liam",
+      "name": "Liam",
+      "role": "Friend",
+      "priority": "normal",
+      "context": "personal",
+      "avatarInitials": "L"
+    }
+  ],
+  "projects": [
+    {
+      "id": "project_atlas",
+      "name": "Project Atlas",
+      "status": "active",
+      "providers": ["gmail", "outlook", "slack"],
+      "summary": "The client approved Concept B. Tomorrow's demo moved to 2:30 PM, and final pricing still needs Alex's approval by 1:30 PM.",
+      "latestState": [
+        "Client approved Concept B",
+        "Demo moved from 3:00 PM to 2:30 PM",
+        "Pricing approval is still waiting on Alex"
+      ],
+      "decisions": [
+        "Use Concept B for the client demo",
+        "Move the demo to 2:30 PM"
+      ],
+      "openQuestions": [
+        "Can Alex approve the final pricing before 1:30 PM?"
+      ],
+      "participantIds": ["contact_maya", "contact_daniel", "contact_noah"]
+    },
+    {
+      "id": "project_q4_launch",
+      "name": "Q4 Launch",
+      "status": "active",
+      "providers": ["gmail", "slack"],
+      "summary": "Marketing is preparing the Q4 launch. Jordan needs Alex's answer on the homepage headline before tomorrow morning.",
+      "latestState": [
+        "Homepage concept is ready",
+        "Headline decision is still open"
+      ],
+      "decisions": [],
+      "openQuestions": [
+        "Which launch headline should the team use?"
+      ],
+      "participantIds": ["contact_jordan", "contact_noah"]
+    },
+    {
+      "id": "project_investor_deck",
+      "name": "Investor Deck",
+      "status": "active",
+      "providers": ["gmail", "slack"],
+      "summary": "The investor deck is nearly finished. Alex promised to send the revised version by 5:00 PM today.",
+      "latestState": [
+        "Finance slide updated",
+        "Revised deck due at 5:00 PM"
+      ],
+      "decisions": [
+        "Use the conservative revenue scenario"
+      ],
+      "openQuestions": [],
+      "participantIds": ["contact_maya", "contact_sarah"]
+    }
+  ],
+  "messages": [
+    {
+      "id": "msg_atlas_slack_urgent",
+      "provider": "slack",
+      "accountLabel": "Northstar Slack",
+      "senderId": "contact_maya",
+      "senderName": "Maya Chen",
+      "senderPriority": "vip",
+      "timestamp": "2026-09-21T12:58:00-04:00",
+      "channel": "#project-atlas",
+      "subject": "Project Atlas demo moved",
+      "body": "Quick change: Daniel just moved the Project Atlas demo from 3:00 to 2:30 PM tomorrow. Can you confirm you're still available? I need to get back to him in the next 20 minutes.",
+      "preview": "Daniel moved the Project Atlas demo to 2:30 PM tomorrow...",
+      "summary": "The client moved tomorrow's demo to 2:30 PM. Maya needs your confirmation within 20 minutes.",
+      "attentionCategory": "urgent",
+      "context": "work",
+      "needsReply": true,
+      "deadline": "2026-09-21T13:18:00-04:00",
+      "projectId": "project_atlas",
+      "threadId": "thread_atlas_slack",
+      "extractedActionIds": ["action_confirm_atlas_time"],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_atlas_outlook_calendar",
+      "provider": "outlook",
+      "accountLabel": "Northstar Outlook",
+      "senderId": "contact_daniel",
+      "senderName": "Daniel Ruiz",
+      "senderPriority": "high",
+      "timestamp": "2026-09-21T12:51:00-04:00",
+      "subject": "Updated invitation: Project Atlas Demo",
+      "body": "Project Atlas Demo has been rescheduled to Tuesday, September 22 at 2:30 PM. Please accept the updated invitation when you have a moment.",
+      "preview": "Project Atlas Demo has been rescheduled to Tuesday at 2:30 PM...",
+      "summary": "Tomorrow's Project Atlas demo moved to 2:30 PM.",
+      "attentionCategory": "important",
+      "context": "work",
+      "needsReply": false,
+      "deadline": "2026-09-22T14:30:00-04:00",
+      "projectId": "project_atlas",
+      "threadId": "thread_atlas_outlook",
+      "extractedActionIds": ["action_add_atlas_calendar"],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_atlas_gmail_approval",
+      "provider": "gmail",
+      "accountLabel": "Work Gmail",
+      "senderId": "contact_daniel",
+      "senderName": "Daniel Ruiz",
+      "senderPriority": "high",
+      "timestamp": "2026-09-21T11:44:00-04:00",
+      "subject": "Re: Project Atlas concept review",
+      "body": "Concept B looks great. Let's move ahead with that direction for tomorrow's demo. One last thing: could you approve the final pricing table before 1:30 PM today so procurement can review it?",
+      "preview": "Concept B looks great. Let's move ahead with that direction...",
+      "summary": "The client approved Concept B. You need to approve final pricing by 1:30 PM today.",
+      "attentionCategory": "urgent",
+      "context": "work",
+      "needsReply": true,
+      "deadline": "2026-09-21T13:30:00-04:00",
+      "projectId": "project_atlas",
+      "threadId": "thread_atlas_gmail",
+      "extractedActionIds": ["action_approve_atlas_pricing"],
+      "commitmentIds": ["commitment_approve_atlas_pricing"],
+      "read": false
+    },
+    {
+      "id": "msg_atlas_slack_design",
+      "provider": "slack",
+      "accountLabel": "Northstar Slack",
+      "senderId": "contact_noah",
+      "senderName": "Noah Brooks",
+      "senderPriority": "normal",
+      "timestamp": "2026-09-21T10:36:00-04:00",
+      "channel": "#project-atlas",
+      "subject": "Concept B final files",
+      "body": "Uploaded the Concept B final files. I also cleaned up the mobile state we talked about. No action needed unless you spot anything weird before the demo.",
+      "preview": "Uploaded the Concept B final files...",
+      "summary": "Noah uploaded the final Concept B files. No response is needed.",
+      "attentionCategory": "important",
+      "context": "work",
+      "needsReply": false,
+      "projectId": "project_atlas",
+      "threadId": "thread_atlas_slack",
+      "extractedActionIds": [],
+      "commitmentIds": [],
+      "read": true
+    },
+    {
+      "id": "msg_q4_slack_question",
+      "provider": "slack",
+      "accountLabel": "Northstar Slack",
+      "senderId": "contact_jordan",
+      "senderName": "Jordan Lee",
+      "senderPriority": "normal",
+      "timestamp": "2026-09-21T12:22:00-04:00",
+      "channel": "#q4-launch",
+      "subject": "Homepage headline decision",
+      "body": "For the launch page, do you prefer 'Make work feel lighter' or 'Work without the noise'? If you can pick one by tomorrow at 9 AM, design can lock the page before standup.",
+      "preview": "Do you prefer 'Make work feel lighter' or 'Work without the noise'?",
+      "summary": "Jordan needs you to choose a homepage headline by 9:00 AM tomorrow.",
+      "attentionCategory": "needs_reply",
+      "context": "work",
+      "needsReply": true,
+      "deadline": "2026-09-22T09:00:00-04:00",
+      "projectId": "project_q4_launch",
+      "threadId": "thread_q4_slack",
+      "extractedActionIds": ["action_choose_q4_headline"],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_investor_gmail",
+      "provider": "gmail",
+      "accountLabel": "Work Gmail",
+      "senderId": "contact_maya",
+      "senderName": "Maya Chen",
+      "senderPriority": "vip",
+      "timestamp": "2026-09-21T11:18:00-04:00",
+      "subject": "Investor deck — final pass",
+      "body": "Thanks for taking the last pass. You mentioned you'd send the revised deck by 5 today. Finance already updated slide 12, so the only remaining piece should be your edits on the market slide.",
+      "preview": "You mentioned you'd send the revised deck by 5 today...",
+      "summary": "You promised to send the revised investor deck by 5:00 PM today. Only the market slide still needs your edits.",
+      "attentionCategory": "important",
+      "context": "work",
+      "needsReply": false,
+      "deadline": "2026-09-21T17:00:00-04:00",
+      "projectId": "project_investor_deck",
+      "threadId": "thread_investor_gmail",
+      "extractedActionIds": ["action_send_investor_deck"],
+      "commitmentIds": ["commitment_send_investor_deck"],
+      "read": false
+    },
+    {
+      "id": "msg_finance_slack",
+      "provider": "slack",
+      "accountLabel": "Northstar Slack",
+      "senderId": "contact_sarah",
+      "senderName": "Sarah Patel",
+      "senderPriority": "high",
+      "timestamp": "2026-09-21T09:47:00-04:00",
+      "channel": "#finance",
+      "subject": "Q3 numbers follow-up",
+      "body": "Sorry — I said I'd have the Q3 numbers to you Friday, but the export took longer than expected. I'll send the final sheet by 3 PM today.",
+      "preview": "I said I'd have the Q3 numbers to you Friday...",
+      "summary": "Sarah missed Friday's deadline and now says she'll send the Q3 numbers by 3:00 PM today.",
+      "attentionCategory": "important",
+      "context": "work",
+      "needsReply": false,
+      "deadline": "2026-09-21T15:00:00-04:00",
+      "threadId": "thread_finance_slack",
+      "extractedActionIds": [],
+      "commitmentIds": ["commitment_sarah_q3"],
+      "read": true
+    },
+    {
+      "id": "msg_professor_outlook",
+      "provider": "outlook",
+      "accountLabel": "Northstar Outlook",
+      "senderId": "contact_professor",
+      "senderName": "Professor Rivera",
+      "senderPriority": "high",
+      "timestamp": "2026-09-21T08:54:00-04:00",
+      "subject": "Tomorrow's research check-in",
+      "body": "Could we move our research check-in tomorrow from 11:00 AM to 11:30 AM? Please let me know by the end of today so I can adjust the room reservation.",
+      "preview": "Could we move our research check-in tomorrow from 11:00 to 11:30?",
+      "summary": "Professor Rivera wants to move tomorrow's research meeting to 11:30 AM and needs your answer today.",
+      "attentionCategory": "needs_reply",
+      "context": "work",
+      "needsReply": true,
+      "deadline": "2026-09-21T23:59:00-04:00",
+      "threadId": "thread_research_outlook",
+      "extractedActionIds": ["action_confirm_research_time"],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_newsletter_gmail",
+      "provider": "gmail",
+      "accountLabel": "Work Gmail",
+      "senderId": "sender_product_weekly",
+      "senderName": "Product Weekly",
+      "senderPriority": "low",
+      "timestamp": "2026-09-21T08:10:00-04:00",
+      "subject": "This week's 12 product lessons",
+      "body": "This week: onboarding teardown, pricing experiments, five new AI workflow tools, and our interview with a marketplace founder.",
+      "preview": "This week: onboarding teardown, pricing experiments...",
+      "summary": "A product newsletter with no action required.",
+      "attentionCategory": "low_priority",
+      "context": "work",
+      "needsReply": false,
+      "threadId": "thread_newsletter",
+      "extractedActionIds": [],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_outlook_office_fyi",
+      "provider": "outlook",
+      "accountLabel": "Northstar Outlook",
+      "senderId": "sender_office_ops",
+      "senderName": "Office Operations",
+      "senderPriority": "normal",
+      "timestamp": "2026-09-21T07:45:00-04:00",
+      "subject": "Kitchen maintenance Wednesday",
+      "body": "The fifth-floor kitchen will be closed Wednesday morning for maintenance. The fourth-floor kitchen will remain open.",
+      "preview": "The fifth-floor kitchen will be closed Wednesday morning...",
+      "summary": "The fifth-floor kitchen is closed Wednesday morning. No action needed.",
+      "attentionCategory": "low_priority",
+      "context": "work",
+      "needsReply": false,
+      "threadId": "thread_office_ops",
+      "extractedActionIds": [],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_personal_dinner",
+      "provider": "gmail",
+      "accountLabel": "Personal Gmail",
+      "senderId": "contact_emma",
+      "senderName": "Emma",
+      "senderPriority": "normal",
+      "timestamp": "2026-09-21T12:06:00-04:00",
+      "subject": "Dinner tonight?",
+      "body": "A few of us are thinking ramen around 7:30. No pressure, just let me know if you're in!",
+      "preview": "A few of us are thinking ramen around 7:30...",
+      "summary": "Emma is planning ramen at 7:30 PM and wants to know if you're joining.",
+      "attentionCategory": "casual",
+      "context": "personal",
+      "needsReply": true,
+      "deadline": "2026-09-21T19:00:00-04:00",
+      "threadId": "thread_personal_dinner",
+      "extractedActionIds": [],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_personal_meme",
+      "provider": "slack",
+      "accountLabel": "Friends Slack",
+      "senderId": "contact_liam",
+      "senderName": "Liam",
+      "senderPriority": "normal",
+      "timestamp": "2026-09-21T11:57:00-04:00",
+      "channel": "#random",
+      "subject": "You need to see this",
+      "body": "This is literally you during finals 😂 [meme attachment]",
+      "preview": "This is literally you during finals 😂",
+      "summary": "Liam sent you a meme. No action needed.",
+      "attentionCategory": "low_priority",
+      "context": "personal",
+      "needsReply": false,
+      "threadId": "thread_personal_meme",
+      "extractedActionIds": [],
+      "commitmentIds": [],
+      "read": false
+    },
+    {
+      "id": "msg_mom_personal",
+      "provider": "gmail",
+      "accountLabel": "Personal Gmail",
+      "senderId": "contact_mom",
+      "senderName": "Mom",
+      "senderPriority": "vip",
+      "timestamp": "2026-09-21T09:15:00-04:00",
+      "subject": "Call when you're free",
+      "body": "Nothing urgent — just call me sometime tonight when you're free. I wanted to ask about your weekend plans.",
+      "preview": "Nothing urgent — just call me sometime tonight...",
+      "summary": "Mom would like a call tonight, but she says it isn't urgent.",
+      "attentionCategory": "casual",
+      "context": "personal",
+      "needsReply": true,
+      "deadline": "2026-09-21T22:00:00-04:00",
+      "threadId": "thread_mom",
+      "extractedActionIds": ["action_call_mom"],
+      "commitmentIds": [],
+      "read": true
+    }
+  ],
+  "commitments": [
+    {
+      "id": "commitment_approve_atlas_pricing",
+      "direction": "i_owe",
+      "personName": "Daniel Ruiz",
+      "text": "Approve the final Project Atlas pricing table",
+      "dueAt": "2026-09-21T13:30:00-04:00",
+      "status": "open",
+      "provider": "gmail",
+      "sourceMessageId": "msg_atlas_gmail_approval",
+      "projectId": "project_atlas"
+    },
+    {
+      "id": "commitment_send_investor_deck",
+      "direction": "i_owe",
+      "personName": "Maya Chen",
+      "text": "Send the revised investor deck",
+      "dueAt": "2026-09-21T17:00:00-04:00",
+      "status": "open",
+      "provider": "gmail",
+      "sourceMessageId": "msg_investor_gmail",
+      "projectId": "project_investor_deck"
+    },
+    {
+      "id": "commitment_sarah_q3",
+      "direction": "owed_to_me",
+      "personName": "Sarah Patel",
+      "text": "Send the final Q3 numbers spreadsheet",
+      "dueAt": "2026-09-19T17:00:00-04:00",
+      "revisedDueAt": "2026-09-21T15:00:00-04:00",
+      "status": "overdue",
+      "provider": "slack",
+      "sourceMessageId": "msg_finance_slack"
+    },
+    {
+      "id": "commitment_maya_deck",
+      "direction": "owed_to_me",
+      "personName": "Maya Chen",
+      "text": "Send the revised Project Atlas demo deck",
+      "dueAt": "2026-09-21T12:00:00-04:00",
+      "status": "open",
+      "provider": "slack",
+      "sourceMessageId": "msg_atlas_slack_design",
+      "projectId": "project_atlas"
+    }
+  ],
+  "actions": [
+    {
+      "id": "action_confirm_atlas_time",
+      "kind": "follow_up",
+      "title": "Confirm availability for Project Atlas demo",
+      "dueAt": "2026-09-21T13:18:00-04:00",
+      "sourceMessageId": "msg_atlas_slack_urgent",
+      "provider": "slack",
+      "state": "suggested"
+    },
+    {
+      "id": "action_add_atlas_calendar",
+      "kind": "meeting",
+      "title": "Update Project Atlas demo to 2:30 PM",
+      "dueAt": "2026-09-22T14:30:00-04:00",
+      "sourceMessageId": "msg_atlas_outlook_calendar",
+      "provider": "outlook",
+      "state": "suggested"
+    },
+    {
+      "id": "action_approve_atlas_pricing",
+      "kind": "approval",
+      "title": "Approve final Project Atlas pricing",
+      "dueAt": "2026-09-21T13:30:00-04:00",
+      "sourceMessageId": "msg_atlas_gmail_approval",
+      "provider": "gmail",
+      "state": "suggested"
+    },
+    {
+      "id": "action_choose_q4_headline",
+      "kind": "task",
+      "title": "Choose Q4 launch homepage headline",
+      "dueAt": "2026-09-22T09:00:00-04:00",
+      "sourceMessageId": "msg_q4_slack_question",
+      "provider": "slack",
+      "state": "suggested"
+    },
+    {
+      "id": "action_send_investor_deck",
+      "kind": "deadline",
+      "title": "Send revised investor deck",
+      "dueAt": "2026-09-21T17:00:00-04:00",
+      "sourceMessageId": "msg_investor_gmail",
+      "provider": "gmail",
+      "state": "suggested"
+    },
+    {
+      "id": "action_confirm_research_time",
+      "kind": "meeting",
+      "title": "Confirm 11:30 AM research check-in",
+      "dueAt": "2026-09-21T23:59:00-04:00",
+      "sourceMessageId": "msg_professor_outlook",
+      "provider": "outlook",
+      "state": "suggested"
+    },
+    {
+      "id": "action_call_mom",
+      "kind": "follow_up",
+      "title": "Call Mom tonight",
+      "dueAt": "2026-09-21T22:00:00-04:00",
+      "sourceMessageId": "msg_mom_personal",
+      "provider": "gmail",
+      "state": "suggested"
+    }
+  ],
+  "catchUp": {
+    "rangeLabel": "Last 3 hours",
+    "processedCount": 42,
+    "whatChanged": [
+      "The Project Atlas demo moved from 3:00 PM to 2:30 PM tomorrow.",
+      "The client approved Concept B for Project Atlas.",
+      "Sarah moved her Q3 numbers commitment to 3:00 PM today."
+    ],
+    "needsYou": [
+      "Approve final Project Atlas pricing by 1:30 PM.",
+      "Confirm that you can make the 2:30 PM Project Atlas demo.",
+      "Answer Jordan's Q4 launch headline question by 9:00 AM tomorrow.",
+      "Confirm Professor Rivera's 11:30 AM meeting change today."
+    ],
+    "decisionsMade": [
+      "Project Atlas will use Concept B.",
+      "The Project Atlas demo will start at 2:30 PM tomorrow."
+    ],
+    "safeToIgnore": {
+      "newsletters": 11,
+      "fyiMessages": 7,
+      "casualMessages": 5,
+      "otherLowPriority": 12
+    },
+    "closing": "You're caught up."
+  },
+  "briefings": {
+    "morning": {
+      "title": "Good morning, Alex",
+      "subtitle": "You have 3 things that need you today. The rest can wait.",
+      "urgentCount": 2,
+      "importantCount": 5,
+      "needsReplyCount": 7,
+      "firstMeeting": "10:30 AM — Product sync",
+      "commitmentsDue": 4,
+      "peopleWaiting": 3,
+      "highlights": [
+        "Project Atlas pricing is due at 1:30 PM.",
+        "Investor deck is due at 5:00 PM.",
+        "Professor Rivera needs a meeting-time confirmation today."
+      ]
+    },
+    "evening": {
+      "title": "Before you finish",
+      "subtitle": "You're almost clear for the day.",
+      "unansweredImportant": 1,
+      "commitmentsRemaining": 1,
+      "safeUntilTomorrow": 18,
+      "completedToday": 6,
+      "highlights": [
+        "One important reply is still waiting.",
+        "Call Mom tonight when you're free.",
+        "18 lower-priority items can safely wait until tomorrow."
+      ]
+    }
+  },
+  "focusPresets": [
+    {
+      "id": "deep_work",
+      "label": "Deep Work",
+      "defaultMinutes": 120,
+      "allowUrgent": true,
+      "allowVip": true,
+      "autoReply": true,
+      "autoReplyText": "I'm in focus mode until 4:00 PM. I'll review this afterward."
+    },
+    {
+      "id": "meeting",
+      "label": "Meeting",
+      "defaultMinutes": 60,
+      "allowUrgent": true,
+      "allowVip": true,
+      "autoReply": true,
+      "autoReplyText": "I'm in a meeting right now. I'll get back to you afterward."
+    },
+    {
+      "id": "studying",
+      "label": "Studying",
+      "defaultMinutes": 90,
+      "allowUrgent": true,
+      "allowVip": true,
+      "autoReply": true,
+      "autoReplyText": "I'm studying right now and will reply when I'm finished."
+    },
+    {
+      "id": "sleeping",
+      "label": "Sleeping",
+      "defaultMinutes": 480,
+      "allowUrgent": true,
+      "allowVip": true,
+      "autoReply": false,
+      "autoReplyText": ""
+    }
+  ],
+  "suggestedReplies": {
+    "msg_atlas_slack_urgent": [
+      "Yes, 2:30 PM still works for me. Please confirm with Daniel.",
+      "I can make 2:30 PM. Thanks for the heads-up."
+    ],
+    "msg_q4_slack_question": [
+      "Let's use 'Work without the noise.' It feels clearer for the launch page.",
+      "I prefer 'Make work feel lighter.' Let's lock that one."
+    ],
+    "msg_professor_outlook": [
+      "11:30 AM works for me. Thanks for checking.",
+      "I can't do 11:30, but I can keep the original 11:00 AM time."
+    ]
+  }
+}
