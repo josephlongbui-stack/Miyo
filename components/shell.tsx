@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import {
   Home,
@@ -17,6 +17,7 @@ import {
   CircleCheck,
   Focus,
   ArrowUpRight,
+  MessageCircle,
 } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Logo, Avatar } from "./ui";
@@ -24,6 +25,7 @@ import { seed, useDemo } from "./store";
 export const nav = [
   ["dashboard", "Home", Home],
   ["inbox", "Inbox", Inbox],
+  ["ask", "Ask Miyo", MessageCircle],
   ["catch-up", "Catch Me Up", Sparkles],
   ["projects", "Projects", Layers3],
   ["commitments", "Commitments", Handshake],
@@ -33,8 +35,25 @@ export const nav = [
 ] as const;
 export function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
+  const router = useRouter();
   const { state, toast } = useDemo();
   const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (
+        (e.metaKey || e.ctrlKey) &&
+        e.key.toLowerCase() === "k" &&
+        !document.querySelector("dialog[open]")
+      ) {
+        e.preventDefault();
+        if (path === "/app/ask")
+          window.dispatchEvent(new Event("miyo:ask-focus"));
+        else router.push("/app/ask");
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [path, router]);
   useEffect(() => {
     if (!mobile) return;
     const close = (e: KeyboardEvent) => {
@@ -80,7 +99,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
           {[
             {
               label: "Daily",
-              ids: ["dashboard", "inbox", "catch-up", "focus"],
+              ids: ["dashboard", "inbox", "ask", "catch-up", "focus"],
             },
             {
               label: "Organize",
@@ -161,6 +180,11 @@ export function Shell({ children }: { children: React.ReactNode }) {
             </span>
           </div>
           <div className="topbar-actions">
+            <Link className="ask-global" href="/app/ask" aria-label="Ask Miyo">
+              <MessageCircle size={15} />
+              <span>Ask Miyo…</span>
+              <kbd>⌘ K</kbd>
+            </Link>
             <Link
               className={
                 "focus-button " + (state.focus.active ? "is-active" : "")

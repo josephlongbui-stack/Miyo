@@ -1,4 +1,5 @@
 "use client";
+import { AskLink } from "./ask-entry";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -52,6 +53,11 @@ export function CatchUp({ autoStart = false }: { autoStart?: boolean }) {
       <PageHeading
         title="Catch Me Up"
         description="Everything that changed. Only the parts that matter."
+        action={
+          <AskLink question="What changed while I was away?">
+            Ask a follow-up
+          </AskLink>
+        }
       />
       <div className="catchup-controls">
         <div

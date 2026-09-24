@@ -7,6 +7,7 @@ import { Commitments, Actions, Briefings } from "@/components/productivity";
 import { FocusPage } from "@/components/focus";
 import { Settings, Onboarding } from "@/components/settings";
 import { notFound } from "next/navigation";
+import { AskMiyo } from "@/components/ask-miyo";
 export default async function Page({
   params,
   searchParams,
@@ -23,6 +24,14 @@ export default async function Page({
   if (view[0] === "onboarding") return <Onboarding />;
   let screen: React.ReactNode;
   switch (view[0]) {
+    case "ask":
+      screen = (
+        <AskMiyo
+          key={value("q") || "ask"}
+          initialQuestion={value("q")?.slice(0, 600)}
+        />
+      );
+      break;
     case "dashboard":
       screen = <Dashboard />;
       break;

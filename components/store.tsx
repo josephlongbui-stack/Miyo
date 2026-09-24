@@ -256,6 +256,9 @@ export function DemoProvider({ children }: { children: ReactNode }) {
     notify("Reminder set. Miyo will keep it on your list.");
   }
   function reset() {
+    try {
+      sessionStorage.removeItem("miyo-ask-v1");
+    } catch {}
     setState(initialState());
     setSelected(null);
     notify("Demo reset. Ready for a fresh walkthrough.");

@@ -54,6 +54,7 @@ The animation is replayable. Urgent and VIP overrides determine whether the simu
 
 ## Included screens and behavior
 
+- Ask Miyo at `/app/ask`: grounded questions across the seeded communication world, cited answers, contextual follow-ups, meeting preparation, live commitment/action cards, and tab-local conversation history. No AI service or API key required. See [ASK_MIYO.md](./ASK_MIYO.md) for the demo walkthrough and future LLM/RAG integration seam. Run `npm run test:ask` to verify the local answer engine.
 - Landing page with a real, reusable dashboard preview and the supplied mascot as the logo and favicon.
 - Five-step onboarding, individual account connection animations, and Connect all.
 - Dashboard, prioritized inbox, All / Work / Personal segmentation, category/provider filters, search, message details, and original-message context.
@@ -97,6 +98,8 @@ components/ui.tsx     Shared visual components and mascot logo
 components/shell.tsx  Responsive app navigation
 components/inbox.tsx  Filters, message detail, replies, and AI drafts
 components/catch-up.tsx
+components/ask-miyo.tsx      Ask Miyo conversation and cited answer interface
+lib/ask-miyo/               Normalized knowledge, retrieval, and service adapter
 components/projects.tsx
 components/productivity.tsx  Commitments, actions, and briefings
 components/focus.tsx  Focus timer and mascot delivery animation

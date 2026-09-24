@@ -1,4 +1,5 @@
 "use client";
+import { AskLink } from "./ask-entry";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Check, Hash } from "lucide-react";
@@ -92,6 +93,9 @@ export function PrioritySettings() {
               <Avatar name={c.name} />
               <div className="priority-row-copy">
                 <h3>{c.name}</h3>
+                <AskLink question={`What did ${c.name} ask me to do?`}>
+                  Ask about {c.name.split(" ")[0]}
+                </AskLink>
                 <p>
                   {c.role} · {labels[c.context]}
                 </p>

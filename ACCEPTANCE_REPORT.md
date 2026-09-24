@@ -8,6 +8,7 @@ All critical criteria below were checked against the completed local demo. Inter
 
 - [x] `npm install` succeeds.
 - [x] The documented development command runs without runtime errors.
+- [x] The project passes a production build or equivalent TypeScript compilation check.
 - [x] Landing page loads at `/`.
 - [x] App demo is reachable from the landing page.
 - [x] Main navigation links do not lead to broken pages.
@@ -222,3 +223,20 @@ The journey completed, including the settled urgent card and its AI Draft / simu
 - Completed dashboard commitments now expose “Reopen” as their accessible button label; reopening restores “Complete.”
 - Verified both transitions in the running browser and reopened the two test commitments afterward.
 - `npm run build` and `npm run typecheck` passed. The initial sandboxed build stalled during compilation; rerunning outside the sandbox completed successfully.
+
+## Ask Miyo — September 22, 2026
+
+- Added `/app/ask` within the existing route architecture, a main navigation item, a top-bar entry with ⌘ K / Ctrl K, and contextual links on project, commitment, contact-priority, and Catch Me Up screens. Existing page implementations and the canonical seed remain in place.
+- Built a normalized knowledge/source model and replaceable `askMiyo` service. The default engine uses local intent/entity/text retrieval and grounded structured answers; it requires no API keys, environment variables, external database, or network service.
+- `npm run test:ask`: **25 tests passed**, covering every required sample question plus context changes, missing records/false premises, current completion and priority state, revised deadlines, meeting times, source integrity, and the service adapter.
+- Submitted **all 15 required questions in the development browser**. Each produced a meaningful cited answer, including explicit coverage explanations for the absent James record and Sarah meeting time. No unsupported example data was substituted for the supplied seed.
+- Completed `Dashboard → Ask Miyo → Atlas summary → What am I responsible for? → Sarah meeting preparation → source message`. Verified project context on the responsibility follow-up and replacement by Sarah context on the named-person question. Repeated the Ask Miyo journey against the production build.
+- Clicked Gmail, Outlook, and Slack citations and inspected the correct original-message dialogs. A commitment-record citation opened the **Owed to Me** tab. Atlas's contextual Ask link submitted its question automatically; the global keyboard shortcut opened Ask Miyo and focused its input when already on that route.
+- Restored all 15 conversation turns after a browser refresh. New conversation cleared the questions and context. Completing Sarah's overdue commitment updated its card and removed it from the next overdue answer; reopening restored the shared commitment record. Temporary development-test completion was reverted.
+- Completed an extracted Atlas confirmation action from an Ask answer in the production browser. Its card changed to Completed and the next responsibility answer omitted that action and its handled message.
+- Inspected desktop at **1280×900**, and narrow layouts at **390×844** and **319×774**. Suggestion cards, answers, collapsed context, and the sticky input fit without horizontal overflow. Submitted a question with Enter and opened its Slack source on the 319px layout. The input remained within the viewport.
+- `npm run build` and `npm run typecheck` both passed after the final application changes. The optimized production app started on a separate test port successfully.
+- Production HTTP checks passed for **17 base routes** (including the expected `/app` redirect) and three contextual query URLs. Three invalid routes, including `/app/ask/invalid`, returned the intended 404. All **17 HTML-referenced/public assets** tested returned 200; served mascot hashes matched the local files.
+- In the production browser, checked landing, dashboard, inbox, Catch Me Up, projects, Atlas, commitments, actions, briefings, Focus, settings, and onboarding. Each rendered its expected heading without broken loaded images. Browser warning/error logs were empty during the exercised journeys.
+- The package lock contains no local-file, linked, or localhost dependencies. Ask Miyo has no fetch calls, application environment-variable reads, or hard-coded backend URL. It uses the existing Vercel-compatible build configuration. No live Vercel deployment was created or tested.
+- Added `ASK_MIYO.md` with architecture, demo boundaries, source behavior, test commands, and the future server-side LLM/RAG adapter seam. Updated README, Vercel documentation, and the portable source ZIP.

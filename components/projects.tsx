@@ -1,4 +1,5 @@
 "use client";
+import { AskLink } from "./ask-entry";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -163,6 +164,9 @@ export function ProjectDetail({ id }: { id: string }) {
         action={<Providers names={p.providers} />}
       />
       <div className="project-summary card">
+        <AskLink question={`Catch me up on ${p.name}`}>
+          Ask Miyo about this project
+        </AskLink>
         <div className="summary-title">
           <Sparkles size={18} />
           <strong>Here’s where things stand</strong>

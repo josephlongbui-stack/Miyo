@@ -5,6 +5,7 @@ import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 import "./globals.css";
 import "./minimal.css";
+import "./ask.css";
 import { DemoProvider } from "@/components/store";
 import { MessageDetail } from "@/components/inbox";
 import { WebTools } from "@/components/web-tools";

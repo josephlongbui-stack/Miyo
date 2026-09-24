@@ -34,6 +34,7 @@ Open `http://127.0.0.1:3002`. Port 3002 lets this preview coexist with the devel
 ## Demo behavior after deployment
 
 - Gmail, Outlook, Slack, replies, AI summaries, and reminders remain simulated, as specified for this demo.
+- Ask Miyo at `/app/ask` runs its retrieval and answer generation locally over the bundled seed and current browser state. It requires no additional Vercel configuration, API keys, environment variables, or external service. Conversation history is scoped to the visitor's browser tab.
 - Each browser starts with the same supplied scenario and saves its own changes in localStorage. Existing localhost state does not transfer to a new deployment domain.
 - Mascot images and the favicon use paths under `public/`; no remote image host or private local file is needed.
 - Unknown pages, invalid project IDs, and unexpected extra URL segments use the app's not-found page.

@@ -1,4 +1,5 @@
 "use client";
+import { AskLink } from "./ask-entry";
 import { useState } from "react";
 import Link from "next/link";
 import {
@@ -56,6 +57,9 @@ export function Commitments({ initialTab = "i_owe" }: { initialTab?: string }) {
         }
       />
       <div className="commitments-controls">
+        <AskLink question="What commitments are overdue?">
+          Ask what’s overdue
+        </AskLink>
         <div
           className="segmented"
           role="group"
